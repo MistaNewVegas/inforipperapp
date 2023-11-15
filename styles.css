@@ -1,0 +1,116 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 20px;
+    text-align: center;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+input[type="text"], input[type="submit"], button {
+    width: calc(50% - 12px);
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+}
+
+input[type="submit"]:hover, button:hover {
+    background-color: #555;
+}
+
+#resultContainer {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+#darkModeButton {
+    background-color: #555;
+    color: #fff;
+    padding: 5px 10px; /* Adjust padding as needed */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem; /* Adjust font size as needed */
+    display: inline-block; /* This makes the button's width adapt to its content */
+    /* Remove any width property if it was previously set */
+}
+
+#darkModeButton:hover {
+    background-color: #777;
+}
+
+.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode nav {
+    background-color: #555;
+}
+
+.dark-mode form, .dark-mode #resultContainer {
+    background-color: #666;
+    color: #fff;
+}
+
+.dark-mode input[type="text"], .dark-mode input[type="submit"], .dark-mode button {
+    background-color: #777;
+    color: #fff;
+}
+
+/* Styles for the debug info box */
+#debugInfoBox {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#debugInfoSelect, #useDebugInfo, #addToDebugList {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+/* Specific dark mode styles for the debug info box */
+.dark-mode #debugInfoBox {
+    background-color: #444; /* Darker background for the box */
+    color: #ccc; /* Lighter text color for readability */
+}

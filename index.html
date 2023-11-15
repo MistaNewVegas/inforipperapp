@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Scraping App</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+    <script type="text/javascript">
+        var debugInfo = {{ debug_info | tojson | safe }};
+    </script>
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <h1>Web Scraping App</h1>
+        <button id="darkModeButton">Toggle Dark Mode</button>
+    </nav>
+
+    <!-- Debug Info Box -->
+    <div id="debugInfoBox">
+        <h3>Debug Info</h3>
+        <select id="debugInfoSelect">
+            <!-- Options populated from Flask -->
+            {% for item in debug_info %}
+                <option value="{{ loop.index }}">{{ item.url }} - {{ item.tag }}</option>
+            {% endfor %}
+        </select>
+        <button id="useDebugInfo">Use Selected</button>
+        <button id="addToDebugList">Add Current to Debug List</button>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="content">
+        <!-- Form for Web Scraping -->
+        <form id="scrapeForm">
+            <input type="text" id="url" name="url" placeholder="Enter URL" required>
+            <input type="text" id="tag" name="tag" placeholder="Enter Tag" required>
+            <input type="submit" value="Run Web Scraper">
+            <button type="button" id="clearFormButton">Clear Form</button>
+        </form>
+
+        <!-- Display the Result -->
+        <div id="resultContainer"></div>
+    </div>
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- JavaScript for Form Submission and UI Interactions -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
